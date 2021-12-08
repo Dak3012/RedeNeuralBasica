@@ -4,32 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Aresta
-{
-	public int EndereçoOrigem { get; set; }
-	public int EndereçoDestino { get; set; }
-	public float Valor { get; set; }
-}
 public class CamadaNeural
 {
-	public List<Aresta> ListaArestas { get; set; }
-	public CamadaNeural(CamadaNeural camadaNeural)
+	public double[,] ListaArestas { get; set; }
+	public CamadaNeural(double[,] listaArestas)
 	{
-		ListaArestas = camadaNeural.ListaArestas;
+		ListaArestas = listaArestas;
 	}
 	public CamadaNeural(int NOrigem, int NDestino)
 	{
-		ListaArestas = new List<Aresta>();
+		ListaArestas = new double[NOrigem,NDestino];
 		for (int EndereçoOrigem = 0; EndereçoOrigem < NOrigem; EndereçoOrigem++)
 		{
 			for (int EndereçoDestino = 0; EndereçoDestino < NDestino; EndereçoDestino++)
 			{
-				ListaArestas.Add(new Aresta()
-				{
-					EndereçoDestino = EndereçoDestino,
-					EndereçoOrigem = EndereçoOrigem,
-					Valor = new Random().NextSingle(),
-				});
+				ListaArestas[EndereçoOrigem, EndereçoDestino] = new Random().NextDouble();
 			}
 		}
 	}
