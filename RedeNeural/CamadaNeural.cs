@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// Classe da camada neural responsavel por guardar as informações de intereções entre as camadas de neuronios.
+/// </summary>
 public class CamadaNeural
 {
 	public double[,] ListaArestas { get; set; }
@@ -23,6 +25,9 @@ public class CamadaNeural
 		}
 	}
 }
+/// <summary>
+/// Nova rede neural, inicia uma novo "individuo" com as camadas randomicas.
+/// </summary>
 public class RedeNeural
 {
 	public List<CamadaNeural> CamadaNeural { get; set; }
