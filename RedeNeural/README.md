@@ -14,3 +14,21 @@ Por esse motivo foquei em transformar as arestas em camadas de matrizes bidimens
 * Cada aresta terá um peso do vertice anterior
   * Quanto mais importante for o vertice anterior mais perto de 1 será o valor da aresta.
   * Quanto menos importante for a informação do vertice anterior para esse vertice, mais perto de 0 será o valor da aresta.
+
+### Funções 
+- Nova rede neural
+- Classe RedeNeural()
+  - Número de entradas, Tamanho das camadas intermediaris, Quantidade de camadas, Número de saídas
+~~~~
+var redeNeural = new RedeNeural()
+~~~~
+Clonar rede neural 
+- Clona a rede neural de forma profunda, ou seja qualquer mudança nesse novo individuo não afeta o outro
+~~~~
+var RedeClone = redeNeural.CloneRede()
+~~~~
+Mudar status da rede
+- Clona a nova rede neural utilizando a função "CloneRede()", porem,  mudando randomicamente os status da mesmo de forma a obedecer as regras definidas na entrada
+~~~~
+var novaRede = redeNeural.RandomStats(Diferença, GrauMaximo)
+~~~~
